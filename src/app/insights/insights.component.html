@@ -1,0 +1,24 @@
+<section>
+
+    <!-- in Angular all forms are ngForm due to FormModule -->
+    <form>
+        Select a Category
+        <select [(ngModel)]='paramObj.category' name='category'>
+            <option value='users'>Users</option>
+            <option value='albums'>Albums</option>
+            <option value='posts'>Posts</option>
+            <option value='photos'>Photos</option>
+        </select><br/>
+        Select an ID (1-9)
+        <input type='range' min="1" max="9" [(ngModel)]='paramObj.id' name='id' /> {{paramObj.id}}
+    </form>
+    <button (click)='makeServiceCall()'>Go</button>
+
+    <!-- shape of returned data is not known -->
+    <!-- temp output for debugging -->
+    <!-- <pre>{{reportData | json}}</pre> -->
+
+    <!-- ternary operator, logic expression ? value if true: value if false -->
+    <!-- could use ngIf -->
+    <p>{{reportData.name ? reportData.name:reportData.id}}</p>
+</section>

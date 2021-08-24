@@ -1,0 +1,16 @@
+<aside>
+    <!-- defaults to dollar -->
+    <p>Code {{code}} Price {{price | currency:'$'}} Count {{count}}</p>
+    <p>Price*Count is {{price * count | currency:'$'}}</p>
+    <button (click)='buyStock()'>Buy</button>
+
+    <button (click)='resetStock()'>Reset</button>
+
+    <!-- *ngIf will decide whether the tag gets rendered or not -->
+    <!-- <button *ngIf='count>0' (click)='sellStock()'>Sell</button> -->
+
+    <!-- hidden attridute in [] injects a value -->
+    <!-- hidden ALWAYS renders, but css-display can be 'none' -->
+
+    <button [hidden]='!count' (click)='sellStock()'>Sell</button>
+</aside>

@@ -1,0 +1,16 @@
+<section>
+    <h3>Net Worth</h3>
+    <p>Here are the assets that make up my net worth</p>
+    <!-- [] injects value into a component (one-way binding), it's efficient -->
+    <app-asset-view 
+        *ngFor='let c of codes' 
+        [code]='c.code' 
+        [price]='c.price'
+        (sortie)='handleSortie($event)'
+        (reset)='handleReset($event)'>
+        <!-- $event is for custom events to pass data -->
+    </app-asset-view>
+    <!-- <app-asset-view [price]=12></app-asset-view> -->
+    <!-- <app-asset-view [price]=142></app-asset-view> -->
+    <!-- <app-asset-view [price]=82></app-asset-view> -->
+</section>
